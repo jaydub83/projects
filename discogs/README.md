@@ -1,4 +1,7 @@
 #Set-up instructions
+
+####NOTE: This assumes you're not afraid of the command line and have python 2.x installed.
+
 To run, first install the dependencies:
 
     bower install
