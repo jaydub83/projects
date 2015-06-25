@@ -6,9 +6,19 @@
     <script src="js/app.js"></script>
     <script src="js/controllers/main.js"></script>
 </head>
-<body>
+<body ng-controller="mainCtrl">
+<form ng-submit="search(query);">
+    <input type="text" ng-model="query" placeholder="Enter artist..." />
+    <input type="submit" value="Search" />
+</form>
 
-<a href="#/details">click</a>
+<ul>
+    <li ng-repeat="album in album_listing">
+        <img src="{{album.thumb}}" />
+        <h3>{{album.title}}</h3>
+        <h5>Release: {{album.year}}</h5>
+    </li>
+</ul>
 
 <div ng-view></div>
 
