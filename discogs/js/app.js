@@ -1,5 +1,7 @@
 'use strict';
 
+var ACCESS_TOKEN = null;
+
 var discogsApp = angular.module('discogsApp', [
     'ngRoute'
     , 'appControllers'
