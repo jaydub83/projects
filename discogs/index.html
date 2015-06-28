@@ -1,78 +1,14 @@
 <!DOCTYPE html>
 <html ng-app="discogsApp">
 <head>
+	<title>DiscoGs</title>
 	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers/main.js"></script>
 </head>
-<style>
-body {
-	margin: 0px;
-	padding-top: 90px;
-}
-.container {
-	width: 100%;
-}
-#custom-search-input{
-    padding: 0px;
-    border: 0px;
-    background-color: #fff;
-}
-
-#custom-search-input input{
-    border: 0;
-    box-shadow: none;
-}
-
-#custom-search-input button{
-    margin: 2px 0 0 0;
-    background: none;
-    box-shadow: none;
-    border: 0;
-    color: #666666;
-    padding: 0 8px 0 10px;
-    border-left: solid 1px #ccc;
-}
-
-#custom-search-input button:hover{
-    border: 0;
-    box-shadow: none;
-    border-left: solid 1px #ccc;
-}
-
-#custom-search-input .glyphicon-search{
-    font-size: 14px;
-}
-*, *:before, *:after {box-sizing:  border-box !important;}
-
-
-.row {
- -moz-column-width: 18em;
- -webkit-column-width: 18em;
- -moz-column-gap: 1em;
- -webkit-column-gap:1em; 
-  
-}
-
-.item {
- display: inline-block;
- padding:  .25rem;
- width:  100%; 
-}
-
-.well {
- position:relative;
- display: block;
-}
-.productsrow {
- -moz-column-width: 18em;
- -webkit-column-width: 18em;
- -moz-column-gap: 1em;
- -webkit-column-gap: 1em;
-}
-</style>
 <body ng-controller="mainCtrl">
 <div class="container">
 	
@@ -107,7 +43,7 @@ body {
 <div class="row">
     <div class="item" ng-repeat="album in album_listing">
       <div class="well"> 
-        <img src="{{album.thumb}}" />
+        <img src="{{album.thumb}}" style="width: 100%" class="img-responsive" />
         <h3>{{album.title}}</h3>
         <h5>Release: {{album.year}}</h5>
       </div>
