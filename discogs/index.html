@@ -1,26 +1,121 @@
 <!DOCTYPE html>
 <html ng-app="discogsApp">
 <head>
+	<link rel="stylesheet" href="css/bootstrap.css">
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers/main.js"></script>
 </head>
-<body ng-controller="mainCtrl">
-<form ng-submit="search(query);">
-    <input type="text" ng-model="query" placeholder="Enter artist..." />
-    <input type="submit" value="Search" />
-</form>
+<style>
+body {
+	margin: 0px;
+	padding-top: 90px;
+}
+.container {
+	width: 100%;
+}
+#custom-search-input{
+    padding: 0px;
+    border: 0px;
+    background-color: #fff;
+}
 
-<ul>
-    <li ng-repeat="album in album_listing">
+#custom-search-input input{
+    border: 0;
+    box-shadow: none;
+}
+
+#custom-search-input button{
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: #666666;
+    padding: 0 8px 0 10px;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input button:hover{
+    border: 0;
+    box-shadow: none;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input .glyphicon-search{
+    font-size: 14px;
+}
+*, *:before, *:after {box-sizing:  border-box !important;}
+
+
+.row {
+ -moz-column-width: 18em;
+ -webkit-column-width: 18em;
+ -moz-column-gap: 1em;
+ -webkit-column-gap:1em; 
+  
+}
+
+.item {
+ display: inline-block;
+ padding:  .25rem;
+ width:  100%; 
+}
+
+.well {
+ position:relative;
+ display: block;
+}
+.productsrow {
+ -moz-column-width: 18em;
+ -webkit-column-width: 18em;
+ -moz-column-gap: 1em;
+ -webkit-column-gap: 1em;
+}
+</style>
+<body ng-controller="mainCtrl">
+<div class="container">
+	
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header"  style="padding-top: 15px; padding-bottom: 15px;">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <div id="custom-search-input">
+                <div class="input-group col-md-12">
+	                <form ng-submit="search(query);">
+                    <input type="text" ng-model="query" class="form-control input-lg" placeholder="Enter artist..." />
+                    <span class="input-group-btn">
+
+                    </span>
+                </div>
+            </div>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+	    
+    </div><!--/.navbar-collapse -->
+  </div>
+</nav>
+
+
+
+<div class="container">
+<div class="row">
+    <div class="item" ng-repeat="album in album_listing">
+      <div class="well"> 
         <img src="{{album.thumb}}" />
         <h3>{{album.title}}</h3>
         <h5>Release: {{album.year}}</h5>
-    </li>
-</ul>
-
+      </div>
+    </div>
+</div>
+</div>
 <div ng-view></div>
-
+</div>
+</div>
 </body>
 </html>
