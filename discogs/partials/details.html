@@ -7,7 +7,7 @@
       </div>
       <div class="modal-body">
 		<span>
-			{{album.videos[0].uri}}
+			{{album.videos[0].uri | secure_url}}
 		</span>
         {{album.artists[0].name}}
 		{{album.extraartists[0].name}}
@@ -15,6 +15,11 @@
         {{album.label}}
         {{album.type}}
         {{album.year}}        
+		<ul>
+		<li ng-repeat="track in album.tracklist">
+				{{track.title}}
+				</li>
+		</ul>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
