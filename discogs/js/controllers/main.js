@@ -1,6 +1,19 @@
 'use strict';
 
-var appControllers = angular.module('appControllers', []);
+var appControllers = angular.module('appControllers', [
+    'ngRoute'
+]);
+
+appControllers.config([
+    '$routeProvider'
+    , function($routeProvider) {
+        $routeProvider.when('/details/:album_id', {
+            templateUrl: 'partials/details.html'
+            , controller: 'detailsCtrl'
+        });
+    }
+]);
+
 
 appControllers.controller('mainCtrl', [
     '$scope'
@@ -27,9 +40,8 @@ appControllers.controller('mainCtrl', [
 appControllers.controller('detailsCtrl', [
     '$scope'
     , '$http'
-    , function($scope, $http) {
-        $http.get('token').success(function(data) {
-            console.log(data);
-        });
+    , '$routeParams'
+    , function($scope, $http, $routeParams) {
+        console.log($routeParams);
     }
 ]);
