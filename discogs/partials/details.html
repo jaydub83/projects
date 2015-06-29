@@ -6,8 +6,11 @@
 		<h4 class="modal-title" id="myModalLabel">{{album.title}}</h4>
       </div>
       <div class="modal-body">
-        {{album.country}}
-		{{album.format}}
+		<span>
+			{{album.videos[0].uri}}
+		</span>
+        {{album.artists[0].name}}
+		{{album.extraartists[0].name}}
         {{album.genre}}
         {{album.label}}
         {{album.type}}
