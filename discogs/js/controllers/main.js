@@ -42,6 +42,8 @@ appControllers.controller('detailsCtrl', [
     , '$http'
     , '$routeParams'
     , function($scope, $http, $routeParams) {
-        console.log($routeParams);
+        $http.get('https://api.discogs.com/releases/' + $routeParams.album_id + '?token=' + ACCESS_TOKEN).success(function(data) {
+            $scope.details = data;
+        });
     }
 ]);
