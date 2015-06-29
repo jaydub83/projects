@@ -15,3 +15,12 @@ discogsApp.config(['$routeProvider',
         });
     }
 ]);
+
+discogsApp.filter('secure_url', function() {
+    return function(input) {
+        if (input.indexOf('https') !== 0) {
+            input = input.replace('http', 'https');
+        }
+        return input;
+    }
+});
