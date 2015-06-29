@@ -44,7 +44,7 @@
     <div class="item" ng-repeat="album in album_listing">
       <div class="well"> 
         <img ng-src="{{album.thumb}}" style="width: 100%" class="img-responsive" />
-        <h3>{{album.title}}</h3>
+        <h3><a href="#/details/{{album.id}}">{{album.title}}</a></h3>
         <h5>Release: {{album.year}}</h5>
       </div>
     </div>
