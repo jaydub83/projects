@@ -37,6 +37,14 @@ body {
 }
 *, *:before, *:after {box-sizing:  border-box !important;}
 
+.catch-phrase {
+    color: #aaa;
+    display: inline-block;
+    float: right;
+    font-size: 1.5em;
+    padding: 1em 0 0;
+    text-transform: capitalize;
+}
 
 .row {
  -moz-column-width: 18em;

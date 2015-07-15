@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html ng-app="discogsApp">
 <head>
-	<title>DiscoGs</title>
+	<title>Audio Hippo</title>
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/style.css">
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="js/bootstrap.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers/main.js"></script>
 </head>
@@ -31,6 +33,7 @@
                 </div>
             </div>
     </div>
+    <div class="catch-phrase"><em>Shit shouldn't sound this good</em></div>
     <div id="navbar" class="navbar-collapse collapse">
 	    
     </div><!--/.navbar-collapse -->
@@ -43,7 +46,8 @@
 <div class="row">
     <div class="item" ng-repeat="album in album_listing">
       <div class="well"> 
-        <img ng-src="{{album.thumb}}" style="width: 100%" class="img-responsive" />
+		<a href="#/details/{{album.id}}" data-toggle="modal" data-target="#detail">
+		<img ng-src="{{album.thumb}}" style="width: 100%" class="img-responsive" /></a>
         <h3>{{album.title}}</h3>
         <h5>Release: {{album.year}}</h5>
       </div>
@@ -51,7 +55,6 @@
 </div>
 </div>
 <div ng-view></div>
-</div>
 </div>
 </body>
 </html>
